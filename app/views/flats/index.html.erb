@@ -1,0 +1,19 @@
+<h1>Flats</h1>
+
+<ul>
+  <% @flats.each do |flat|  %>
+    <li>
+      <span><%= link_to flat['name'], flat_path(flat['id']) %></span>
+      <span><%= flat["price"] %></span>
+      <span><%= flat["priceCurrency"] %></span>
+    </li>
+  <% end %>
+</ul>
+
+
+<form action="/flats" method="get">
+  <input type="text" name="max_price" placeholder="What is your max price?">
+  <input type="text" name="max_id" placeholder="What is your max id?">
+  <input type="submit" value="Search">
+</form>
+
